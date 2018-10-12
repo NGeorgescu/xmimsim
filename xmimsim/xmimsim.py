@@ -13,9 +13,6 @@ class model():
         self.detector_path = []
         self.crystal = []
         
-
-#   def __str__(self):
-
     def set_parameters(self,**kwargs): 
         """
         Usage
@@ -466,21 +463,36 @@ class model():
                 f.write(self.generate_xmsi())
 
         if any([force_overwrite,not output_file_exists]):
-            process = subprocess.Popen(cmd, 
-                                       stderr=subprocess.PIPE,
-                                       stdout=subprocess.PIPE)        
-            stdout, stderr = process.communicate()
-            if len(stdout)>0: print(stdout)
-            if len(stderr)>0: print(stderr)
-
-            #cleanup
-            if not save_xmsi:
-                os.remove(filename+'.xmsi')
-            if not save_xmso:
-                os.remove(filename+'.xmso')
-        else:
-            print('file {} not run due to existing output at that location'.format(filename))
-    
+            try:
+                process = subprocess.Popen(cmd, shell=True,
+                                           stderr=subprocess.PIPE,
+                                           stdout=subprocess.PIPE)        
+                stdout, stderr = process.communicate()
+                if len(stdout)>0: print(stdout)
+                if len(stderr)>0: print(stderr)
+            except:
+                if os.name=='nt':
+                    print('Error: XMI-MSIM simulation software could not be located by your machine.',
+                    '',  
+                    'If you installed XMI-MSIM (the software, not this python package),', 
+                    'You must insert xmimsim-cli.exe into the enviroment variable path.', 
+                    'Go to My computer (right click) -> properties -> advanced -> advanced',
+                    '-> environment variables... -> Path and edit path by adding xmimsim-cli.exe',
+                    'directory into path (probably the path is something like',
+                    '"C:/Program Files/XMI-MSIM 64-bit/Bin/xmimsim-cli.exe" ',
+                    'but you will have to use "browse" to look for it at the exact location.',
+                    '',
+                    'Otherwise it will not be able to run on windows.',sep='\n')
+                else:
+                     print('Error:XMI-MSIM command not found (try running xmimsim --help from the command line)')
+            else:                        
+                #cleanup
+                if not save_xmsi:
+                    os.remove(filename+'.xmsi')
+                if not save_xmso:
+                    os.remove(filename+'.xmso')
+     
+                
     def get_spectrum(self):
         """
         gets the spectrum and returns it for an arbitrary calculation

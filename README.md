@@ -3,22 +3,22 @@
 # XMIMSIM
 
 
-XMIMSIM (the python package) is a package designed to run the xmimsim (the simulation software) with python.
+XMIMSIM (the python package) is a front-end to XMI-MSIM, XRF open-source simulation software, for running in python.
 
 
 ## Installation
 
-###MacOS
+### MacOS
 On mac, acquire XMIMSIM through [homebrew](http://brew.sh). To install do **not** use the brewsci/science tap
 
     brew tap tschoonj/tap
     brew cask install tschoonj/tap/xmi-msim
 
-###Linux/Windows
+### Linux/Windows
 Follow the instructions [here](https://github.com/tschoonj/xmimsim/wiki/Installation-instructions).
 
 
-###Python
+### Python
 
 Install the python utility with
 
@@ -54,9 +54,7 @@ from there the model, `xm`, can be added to, e.g.:
         vertical_intensity = '1e+009',
         gaussian=0.14)
 
-All these classes return self, so one can actually do this all with one line, i.e.
-
-    xm.set_parameters(**parameters).add_source(....)
+All these classes return self, so one can actually do this all with one line, i.e. `xm.set_parameters(**parameters).add_source(....)`
 
 The beampath layers are added: 
 
@@ -89,9 +87,21 @@ We can print out the number of photons from each of the following bands.
 
 `xm.get_spectrum()` also returns a plottable spectrum from the xmi file.
 
+If you simply copy the blocks of code together into one file and run it it should give you an output.
+
+## Changelog
+
+0.0.1
+ - Initial Release
+
+0.0.2
+ - Fixed windows command, but it requires some changing of environment variables to make it run.
+ - Fixed some header issues with the readme
+ - Cleaned up example.py file
+ - 
 
 ## Contributing
-Special thanks to the [vapory](https://github.com/Zulko/vapory) package, which some of the inspiration for this code comes from (also a python interface for a third-party utility).
+Thanks to [Tom Schoonjans](https://github.com/tschoonj) for creating XMI-MSIM. Special thanks to the [vapory](https://github.com/Zulko/vapory) package, which some of the inspiration for this code comes from (also a python interface for a third-party utility).
 
 NGeorgescu : [https://github.com/NGeorgescu](https://github.com/NGeorgescu)
 

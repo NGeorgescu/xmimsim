@@ -1,11 +1,24 @@
 import xmimsim as xmi
 
-parameters = {'n_photons_interval' : 1,'n_photons_line' : 100000,'n_interactions_trajectory' : 1,
-       'reference_layer' : 2,'d_sample_source' : 100,'area_detector' : 0.5,
-       'collimator_height' : 0,'collimator_diameter' : 0,'d_source_slit' : 100,
-       'slit_size_x' : 0.001,'slit_size_y' : 0.001,'detector_type' : 'SiLi',
-       'detector_live_time' : 1500,'detector_pulse_width' : 1e-05,'detector_nchannels' : 2048,
-       'detector_gain' : 0.0182138,'detector_zero' : 0,'detector_fano' : 0.12,'detector_noise' : 0.1}
+parameters = {'n_photons_interval' : 1,
+   'n_photons_line' : 100000,
+   'n_interactions_trajectory' : 1,
+   'reference_layer' : 2,
+   'd_sample_source' : 100,
+   'area_detector' : 0.5,
+   'collimator_height' : 0,
+   'collimator_diameter' : 0,
+   'd_source_slit' : 100,
+   'slit_size_x' : 0.001,
+   'slit_size_y' : 0.001,
+   'detector_type' : 'SiLi',
+   'detector_live_time' : 1500,
+   'detector_pulse_width' : 1e-05,
+   'detector_nchannels' : 2048,
+   'detector_gain' : 0.0182138,
+   'detector_zero' : 0,
+   'detector_fano' : 0.12,
+   'detector_noise' : 0.1}
 
 
 xm = xmi.model()
