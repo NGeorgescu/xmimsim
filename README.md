@@ -98,7 +98,6 @@ If you simply copy the blocks of code together into one file and run it it shoul
  - Fixed windows command, but it requires some changing of environment variables to make it run.
  - Fixed some header issues with the readme
  - Cleaned up example.py file
- - 
 
 ## Contributing
 Thanks to [Tom Schoonjans](https://github.com/tschoonj) for creating XMI-MSIM. Special thanks to the [vapory](https://github.com/Zulko/vapory) package, which some of the inspiration for this code comes from (also a python interface for a third-party utility).
