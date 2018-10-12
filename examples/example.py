@@ -36,8 +36,8 @@ xm.detector_orientation(rthetaphi=[1,135,0])
 xm.detector_window(xyz=[0,5.6,0])
 xm.add_layer(symbols=['N','O','Ar'],masses=[70,29,1],density=.00122,thickness=3)
 xm.add_layer(symbols=['As','Fe'],masses=[50,50],density=7.31,thickness=0.01)
-xm.set_filename('xmsi_testfile')
-xm.calculate(export='csv-file', M_lines=False, auger_cascade=True,radiative_cascade=False)
+xm.set_filename('xmsi_testfile3')
+xm.calculate(export='csv-file', save_xmso=True, M_lines=False, auger_cascade=True,radiative_cascade=False)
 print(xm.count_photons(**{'k_a_Fe':[6.098,6.744],'k_b_Fe':[6.7801,7.340],'k_a_As':[10.196,10.890],'k_b_As':[11.472,11.999]}))
 
 

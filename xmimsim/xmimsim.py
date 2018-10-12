@@ -464,7 +464,7 @@ class model():
 
         if any([force_overwrite,not output_file_exists]):
             try:
-                process = subprocess.Popen(cmd, shell=True,
+                process = subprocess.Popen(cmd, shell=(True if os.name=='nt' else False),
                                            stderr=subprocess.PIPE,
                                            stdout=subprocess.PIPE)        
                 stdout, stderr = process.communicate()

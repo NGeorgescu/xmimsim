@@ -98,10 +98,14 @@ If you simply copy the blocks of code together into one file and run it it shoul
  - Fixed windows command, but it requires some changing of environment variables to make it run.
  - Fixed some header issues with the readme
  - Cleaned up example.py file
- - 
+
+0.1.0
+ - Fixing the windows problem broke *nix versions. Fixed.
 
 ## Contributing
 Thanks to [Tom Schoonjans](https://github.com/tschoonj) for creating XMI-MSIM. Special thanks to the [vapory](https://github.com/Zulko/vapory) package, which some of the inspiration for this code comes from (also a python interface for a third-party utility).
+
+Report problems to my gmail: nsgeorgescu
 
 NGeorgescu : [https://github.com/NGeorgescu](https://github.com/NGeorgescu)
 
