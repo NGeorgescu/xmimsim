@@ -6,7 +6,7 @@ from .func import XMIMSIM_BINARY, get_elements, xyz_update
 class model():
     """xm = xmi.model()"""
     def __init__(self):
-        self.parameters = {}
+        self.parameters = {'collimator_height' : 0, 'collimator_diameter' : 0, 'detector_zero' : 0}
         self.layers = []
         self.sources = []
         self.excitation_path = []
@@ -29,6 +29,13 @@ class model():
          d_source_slit, slit_size_x, slit_size_y, detector_type, detector_live_time, detector_pulse_width, 
          detector_nchannels, detector_gain, detector_zero, detector_fano, detector_noise
         all distances specified in cm.
+        
+        Defaults
+        ------------
+        The defaults are:
+         - 'collimator_height' = 0
+         - 'collimator_diameter' = 0
+         - 'detector_zero' : 0}
         
         Orientation Definitions
         ------------

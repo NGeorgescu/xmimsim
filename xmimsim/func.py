@@ -57,8 +57,8 @@ def get_elements(args,kwargs):
         except: element_numbers = [atomic_n[sym] for sym in kwargs['symbols']]
     try:element_numbers = [atomic_n[sym] for sym in element_numbers]        
     except:pass
-    element_masses=[e/(100*sum(element_masses)) for e in element_masses]
-    elementdict = dict(zip(element_numbers,element_masses))
+    element_masses=[100*(e/(sum(element_masses))) for e in element_masses]
+    elementdict = {k:v for [k,v] in zip(element_numbers,element_masses)}
     kwargs.update({'elements':elementdict})
     return kwargs # {'element':{7:70,8:29,18:1},'density':val,'thickness':val}
 
