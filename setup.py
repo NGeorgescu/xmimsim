@@ -20,7 +20,7 @@ setup(name='xmimsim',
       author='NGeorgescu',
     description='Toolkit for making and processing X-ray fluoresence simulations via XMI-MSIM',
     long_description=open('README.md').read(),
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
     license='see LICENSE.txt',
     keywords="xmimsim xmi msim xrf fluorescence x-ray xray simulation",
     packages= find_packages(exclude='docs'))
