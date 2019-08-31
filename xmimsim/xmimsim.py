@@ -522,7 +522,8 @@ class model():
                     spec_x = re.compile(r'(?<=\<energy\>)[\d\.e\-\+]+').findall(xml_output_spectrum) #looking for x data
                     spec_y = re.compile(r'(?<=\<counts interaction_number\=\"\d\"\>)[\d\.e\-\+]+').findall(xml_output_spectrum) #looking for y data
                     spec_x, spec_y = [[float (j) for j in i] for i in [spec_x,spec_y]]
-                    self.spectrum = zip(spec_x,spec_y)
+                    y_width = len(spec_y)//len(spec_x)
+                    self.spectrum = [[i,*spec_y[y_width*n:y_width*(n+1)]] for n,i in enumerate(spec_x)]
                 except:
                     print("critical error in data analysis: spectrum not found") #not good if the x and y are different lengths, that means something is wrong with the last 4 lines of code above
         return self.spectrum
