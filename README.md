@@ -114,6 +114,10 @@ If you simply copy the blocks of code together into one file and run it it shoul
 
  - Fixed Readme document type so PyPI handles it correctly
 
+### 0.1.3
+
+ - Allowed larger numbers of interaction counts (greater than 1) in get_spectrum() method
+
 ## Contributing
 Thanks to [Tom Schoonjans](https://github.com/tschoonj) for creating XMI-MSIM. Special thanks to the [vapory](https://github.com/Zulko/vapory) package, which some of the inspiration for this code comes from (also a python interface for a third-party utility).
 
